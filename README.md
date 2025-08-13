@@ -43,15 +43,17 @@ I want to debug:
 pnpm i
 ```
 
-
 <h2>Usage</h2>
+<p>
+Debugging a Next.js application in VS Code involves three main steps: setting a breakpoint, starting the debugger, and selecting a configuration. The following sections will provide detailed, step-by-step demos for specific use cases, but the core process is as follows:
+</p>
 <ol>
-<li>Put a <strong>breakpoint</strong> in your source files (<code>.ts</code>, <code>.tsx</code>).</li>
-<li>Start the debugger by pressing <code>F5</code>.</li>
-<li>Choose the debugging configuration name from the dropdown menu.</li>
+<li>Put a <strong>breakpoint</strong> in your source files (<code>.ts</code>, <code>.tsx</code>) by clicking in the left margin next to the line number.</li>
+<li>Start the <strong>debugger</strong> by pressing <code>F5</code>.</li>
+<li>Choose a <strong>debugging configuration</strong> from the dropdown menu (e.g., "Next.js: debug server-side").</li>
 </ol>
 <p>
-Once you've chosen a configuration, subsequent presses of <code>F5</code> will use that same configuration. If you need to switch to a different one, click on "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>), select a new configuration, and then press <code>F5</code>.
+After the initial setup, VS Code remembers your last-used configuration. For subsequent debugging sessions, you can simply press <code>F5</code>. If you need to switch configurations, open the "Run and Debug" view (or use the shortcut <code>Ctrl + Shift + D</code>), select a new one, and then press <code>F5</code>.
 </p>
 
 <h2>Technologies Used</h2>
