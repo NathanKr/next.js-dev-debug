@@ -141,27 +141,23 @@ This is the launch.json file
 <h2>Demo</h2>
 
 <h3>Debug middleware</h3>
-
 <ol>
 <li>
-    Put a breakpoint on line 5 of <code>middleware.ts</code>.
+Put a breakpoint on line 5 of your <code>middleware.ts</code> file.
 </li>
 <li>
-    Click "Run and Debug" or use the shortcut <code>Ctrl + Shift + D</code> and choose "Next.js: debug server-side".
+Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side". This will start your Next.js app in debug mode.
 </li>
 <li>
-    Once the breakpoint is hit, you can decide how to continue using the debug icons: step by step, and so on.
+In the VS Code debug console or terminal, click on the <code>http://localhost:3000/</code> link that appears. This will open the page in your browser and trigger the middleware.
+</li>
+<li>
+Once the breakpoint is hit, you can use the debug icons to step through the code, inspect variables, and continue execution.
 </li>
 </ol>
 <p>
-The next time you need to debug, you can simply use <code>F5</code> because the last configuration you chose is saved.
+For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
-
-<!-- put a break pointy in line 5 0f middleare.ts
-click "Run and Debug" or shortcut  "Ctrl + shift + D"  and choose "Next.js: debug server-side"
-Once breakpoint hit you can decide how to continue using the debug icons : step but step , and so on
-
-The next time you need to debug it use F5 because the last name is saved -->
 
 The following is an image og breakpoint hit
 
