@@ -49,8 +49,8 @@ Debugging a Next.js application in VS Code involves three main steps: setting a 
 </p>
 <ol>
 <li>Put a <strong>breakpoint</strong> in your source files (<code>.ts</code>, <code>.tsx</code>) by clicking in the left margin next to the line number.</li>
+<li>From the <strong>"Run and Debug"</strong> view, select a debugging configuration from the dropdown menu (e.g., "Next.js: debug server-side"). This step is optional if you have already selected a configuration and do not need to switch.</li>
 <li>Start the <strong>debugger</strong> by pressing <code>F5</code>.</li>
-<li>Choose a <strong>debugging configuration</strong> from the dropdown menu (e.g., "Next.js: debug server-side").</li>
 </ol>
 <p>
 After the initial setup, VS Code remembers your last-used configuration. For subsequent debugging sessions, you can simply press <code>F5</code>. If you need to switch configurations, open the "Run and Debug" view (or use the shortcut <code>Ctrl + Shift + D</code>), select a new one, and then press <code>F5</code>.
@@ -156,7 +156,7 @@ This is the launch.json file
 <h2>Demo</h2>
 
 <p>
-This section provides a set of step-by-step guides for debugging different parts of a Next.js application, including both server-side and client-side code. The following demos show you how to use specific launch configurations to target breakpoints in your middleware, server components, client components, and server actions.
+The Demo provides a set of step-by-step guides for debugging different parts of a Next.js application, including both server-side and client-side code. The following demos show you how to use specific launch configurations to target breakpoints in your middleware, server components, client components, and server actions.
 </p>
 
 <h3>Debug server code : middleware</h3>
