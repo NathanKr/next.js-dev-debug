@@ -1,14 +1,14 @@
 <h1>Project Name</h1>
-debug next.js using vscode
+Debug next.js using vscode
 
 <h2>Project Description</h2>
 <p>
-    This project provides a comprehensive guide for debugging Next.js applications using Visual Studio Code. It details how to set up the necessary <strong>.vscode/launch.json</strong> configuration file to enable debugging for various types of Next.js code, including <strong>server components</strong>, <strong>client components</strong>, <strong>middleware</strong>, and <strong>server actions</strong>. The guide offers step-by-step instructions and best practices for debugging both server-side and client-side code, as well as a seamless <strong>"full stack"</strong> debugging approach.
+    This project provides a comprehensive guide for debugging Next.js applications using Visual Studio Code. It details how to set up the necessary <strong>.vscode/launch.json</strong> configuration file to enable debugging for various types of Next.js code, including <strong>server components</strong>, <strong>client components</strong>, <strong>middleware</strong>, and <strong>server actions</strong>. The guide offers step-by-step instructions for debugging both server-side and client-side code, as well as a seamless <strong>"full stack"</strong> debugging approach.
 </p>
 
 <h2>Motivation</h2>
 <p>
-You want to debug a specific function during development by setting a breakpoint and stepping through the code. This function can be on the server-side or the client-side. What are your options?
+You have a next.js app router application and you want to debug a specific function during development by setting a breakpoint and stepping through the code. This function can be on the server-side or the client-side. What are your options?
 </p>
 
 options :
