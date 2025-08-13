@@ -73,7 +73,7 @@ Once you've chosen a configuration, subsequent presses of <code>F5</code> will u
 <li>
     <strong>request</strong>: The mode of the debugger. <code>launch</code> starts a new Node.js process (Next.js app) to debug, while <code>attach</code> connects to an already running Node.js process (Next.js app).
 </li>
-<strong>command</strong>: Used with <code>type: "node-terminal"</code>, this specifies the shell command to run to start the application, such as <code>npm run dev</code>.
+<strong>command</strong>: Used with <code>type: "node-terminal"</code>, this specifies the shell command to run to start the application, such as <code>pnpm run dev</code>.
 </li>
 <li>
 <strong>url</strong>: The URL that the debugger should open and attach to when the debug session starts. This is typically used for client-side debugging configurations.
@@ -111,7 +111,7 @@ This is the launch.json file
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
-      "command": "npm run dev"
+      "command": "pnpm run dev"
     },
     {
       "name": "Next.js: debug client-side",
@@ -176,16 +176,16 @@ This section provides a set of step-by-step guides for debugging different parts
 For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
 
-The following is an image of breakpoint hit
+The following image shows a breakpoint being hit
 
 <img src='./figs/debug-middleware.png' alt='Breakpoint hit in middleware'/>
 
-remark : for debugging purposes, a server action can be debugged in the same way as middleware
+Remark: for debugging purposes, a server action can be debugged in the same way as middleware
 
 <h3>Debug server code : server component</h3>
 Follow the steps for <strong>Debugging Middleware</strong>, but place your breakpoint in the Home page (e.g., at line 4 of <code>app/page.tsx</code>) instead.
 
-The following is an image of breakpoint hit
+The following image shows a breakpoint being hit
 
 <img src='./figs/debug-server-component.png' alt='Breakpoint hit in server component'/>
 
@@ -195,10 +195,10 @@ The following is an image of breakpoint hit
 <li>
 <strong>Put a breakpoint</strong> on line 5 of app/page1/page.tsx.
 </li>
-<li><strong>Start the server</strong> Open your terminal and run the development server manually
+<li><strong>Start the server</strong> Open your terminal and run the development server manually:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 </li>
@@ -208,7 +208,7 @@ npm run dev
 <li>
 <strong>Start the debugger</strong>: hit F5 or click the green arrow. The debugger will open a new browser window or tab with http://localhost:3000 and attach the debugging tools, allowing you to hit breakpoints in your client components.
 </li>
-<li><strong>Navigate</strong> in the opened browser to http://localhost:3000/page1 </li>
+<li><strong>Navigate</strong> in the opened browser to <code>http://localhost:3000/page1</code>.</li>
 <li>
 <strong>Use the debug icons</strong> once the breakpoint is hit, to step through the code, inspect variables, and continue execution.
 </li>
@@ -218,7 +218,7 @@ npm run dev
 For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
 
-The following is an image of breakpoint hit
+The following image shows a breakpoint being hit
 
 <img src='./figs/debug-client-component.png' alt='Breakpoint hit in client component'/>
 
@@ -273,7 +273,7 @@ For all subsequent debugging sessions, you can simply press <code>F5</code> as V
 <h2>References</h2>
 <ul>
     <li><a href='https://nextjs.org/docs/app/guides/debugging'>Official next.js docs : How to use debugging tools with Next.js</a></li>
-    <li><a href='https://youtu.be/6-EczMn-BeU?si=gOeUhjHLeb1Gr1Vv'> node debugging is easy with vs code </a></li>
+    <li><a href='https://youtu.be/6-EczMn-BeU?si=gOeUhjHLeb1Gr1Vv'>Node debugging is easy with VS Code</a></li>
     <li><a href='https://www.youtube.com/watch?v=_5mGxLZ61J0'> Debugging Next.js in VSCode and Chrome DevTools (comprehensive guide) </a></li>
    
 </ul>
