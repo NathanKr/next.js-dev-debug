@@ -2,29 +2,42 @@
 debug next.js using vscode
 
 <h2>Project Description</h2>
-....
+<p>
+    This project provides a comprehensive guide for debugging Next.js applications using Visual Studio Code. It details how to set up the necessary <strong>.vscode/launch.json</strong> configuration file to enable debugging for various types of Next.js code, including <strong>server components</strong>, <strong>client components</strong>, <strong>middleware</strong>, and <strong>server actions</strong>. The guide offers step-by-step instructions and best practices for debugging both server-side and client-side code, as well as a seamless <strong>"full stack"</strong> debugging approach.
+</p>
 
 <h2>Motivation</h2>
-You want to debug on development specifc function by put breakoing and go step by step . This function can be on the server side or the client side, what are your options ?
+<p>
+You want to debug a specific function during development by setting a breakpoint and stepping through the code. This function can be on the server-side or the client-side. What are your options?
+</p>
 
 options :
+<ul>
+<li>VS Code</li>
+<li>Chrome DevTools (possible on both client-side and server-side)</li>
+</ul>
 
-- vscode
-- chrom dev tools (possible in client side and server side)
-
-We will concentrate on using vs code and .vscode/launch.json . this seems to be the best way because we can debug both server and client side and do it using allready used vscode
-
-i want to debug :
-server component
-client component
-server action
-middleware
+<p>
+We will concentrate on using VS Code and a <code>.vscode/launch.json</code> file. This seems to be the best way because it allows us to debug both server and client-side code from the familiar VS Code environment.
+</p>
+<p>
+I want to debug:
+</p>
+<ul>
+<li>server component</li>
+<li>client component</li>
+<li>server action</li>
+<li>middleware</li>
+</ul>
 
 <h2>Installation</h2>
+<p>
+  Create the <code>.vscode/launch.json</code> file in the project root. You can find the necessary configuration code on <a href='https://nextjs.org/docs/app/guides/debugging'>the official Next.js debugging guide</a>.
+</p>
 
-create .vscode/launch.json in the project root using <a href='https://nextjs.org/docs/app/guides/debugging'>this</a>
-
-install project dependencies
+<p>
+  Install the project dependencies by running the following command in your terminal:
+</p>
 
 ```bash
 pnpm i
@@ -32,21 +45,21 @@ pnpm i
 
 
 <h2>Usage</h2>
-
 <ol>
-<li>put a brakpoint in the source files : .ts , .tsx</li>
-<li>start Debug using F5 </li>
-<li>choose name </li>
+<li>Put a <strong>breakpoint</strong> in your source files (<code>.ts</code>, <code>.tsx</code>).</li>
+<li>Start the debugger by pressing <code>F5</code>.</li>
+<li>Choose the debugging configuration name from the dropdown menu.</li>
 </ol>
-
-once you choose the name e.g. "Next.js: debug server-side" a subsequent F5 will not as for name and will use the prevouse.
-
-If you want to choose new name you need to click "Run and Debug" or shortcut  "Ctrl + shift + D"  and than click F5
+<p>
+Once you've chosen a configuration, subsequent presses of <code>F5</code> will use that same configuration. If you need to switch to a different one, click on "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>), select a new configuration, and then press <code>F5</code>.
+</p>
 
 <h2>Technologies Used</h2>
-next.js
-typescript
-vscode
+<ul>
+<li>Next.js</li>
+<li>TypeScript</li>
+<li>VS Code</li>
+</ul>
 
 <h2>Basic launch.json concepts</h2>
 <p>Here is a breakdown of the key concepts and properties used in a <code>launch.json</code> file for debugging in VS Code:</p>
@@ -140,7 +153,11 @@ This is the launch.json file
 
 <h2>Demo</h2>
 
-<h3>Debug sever code : middleware</h3>
+<p>
+This section provides a set of step-by-step guides for debugging different parts of a Next.js application, including both server-side and client-side code. The following demos show you how to use specific launch configurations to target breakpoints in your middleware, server components, client components, and server actions.
+</p>
+
+<h3>Debug server code : middleware</h3>
 <ol>
 <li>
 <strong>Put a breakpoint</strong>  on line 5 of your <code>middleware.ts</code> file.
@@ -161,15 +178,16 @@ For all subsequent debugging sessions, you can simply press <code>F5</code> as V
 
 The following is an image of breakpoint hit
 
-<img src='./figs/debug-middleware.png'>
+<img src='./figs/debug-middleware.png' alt='Breakpoint hit in middleware'/>
 
-<h3>Debug sever code : server component</h3>
-Follow the steps of Debug middleware just put the breakpoint in the Hpme page at line 4
+remark : for debugging purposes, a server action can be debugged in the same way as middleware
 
+<h3>Debug server code : server component</h3>
+Follow the steps for <strong>Debugging Middleware</strong>, but place your breakpoint in the Home page (e.g., at line 4 of <code>app/page.tsx</code>) instead.
 
 The following is an image of breakpoint hit
 
-<img src='./figs/debug-server-component.png'>
+<img src='./figs/debug-server-component.png' alt='Breakpoint hit in server component'/>
 
 <h3>Debug client code : client component</h3>
 
@@ -195,14 +213,14 @@ npm run dev
 <strong>Use the debug icons</strong> once the breakpoint is hit, to step through the code, inspect variables, and continue execution.
 </li>
 </ol>
-<p>
 
+<p>
 For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
 
 The following is an image of breakpoint hit
 
-<img src='./figs/debug-client-component.png'/>
+<img src='./figs/debug-client-component.png' alt='Breakpoint hit in client component'/>
 
 
 <h3>Debug client code and server side</h3>
@@ -225,26 +243,32 @@ The following is an image of breakpoint hit
     </li>
 </ol>
 
+<p>
+For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
+</p>
+
+
 <h4>How It Works</h4>
 <p>
     The <code>serverReadyAction</code> property in this configuration is key. It tells VS Code to monitor the terminal output for the <code>Local:</code> URL and, once it finds it, to automatically launch a browser and attach a debugger. This is what provides the seamless, integrated debugging experience.
 </p>
 
 
+<h3>When to Use Each Configuration</h3>
+<ul>
+<li>
+<strong><code>Next.js: debug server-side</code></strong>: Use this when you only need to debug code that runs on the server, like middleware, server components, and server actions. It's faster and more resource-efficient because it only starts the server debugger.
+</li>
+<li>
+<strong><code>Next.js: debug client-side</code></strong>: Use this when you need to debug code that runs in the browser, such as client components and UI logic. It assumes the server is already running and only attaches a browser debugger, which is useful for focusing on front-end issues.
+</li>
+<li>
+<strong><code>Next.js: debug full stack</code></strong>: Use this when you need to debug both server and client code at the same time. This is great for tracing a request from the server to the client or for debugging components that have server and client parts working together. It offers the most seamless, all-in-one experience.
+</li>
+</ul>
 
  
 
-<h2>open issues</h2>
-<ul>
-    <li>when to use 'Next.js: debug full stack' / "Next.js: debug client-side" / Next.js: debug server-side</li>
-    <li>how monorepo fits here</li>
-</ul>
-
-<h2>Points of Interest</h2>
-<ul>
-    <li>...</li>
-   
-</ul>
 
 <h2>References</h2>
 <ul>
