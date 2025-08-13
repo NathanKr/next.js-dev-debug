@@ -165,7 +165,7 @@ This section provides a set of step-by-step guides for debugging different parts
 <strong>Put a breakpoint</strong>  on line 5 of your <code>middleware.ts</code> file.
 </li>
 <li>
-<strong>Start the server</strong> : Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side" and hit F5. This will start your Next.js app in debug mode.
+<strong>Start the server</strong>: Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side" and hit F5. This will start your Next.js app in debug mode.
 </li>
 <li>
 <strong>Navigate</strong> : In the VS Code debug console or terminal, click on the <code>http://localhost:3000/</code> link that appears. This will open the page in your browser and trigger the middleware.
@@ -197,7 +197,7 @@ The following image shows a breakpoint being hit
 <li>
 <strong>Put a breakpoint</strong> on line 5 of app/page1/page.tsx.
 </li>
-<li><strong>Start the server</strong> Open your terminal and run the development server manually:
+<li><strong>Start the server</strong>: Open your terminal and run the development server manually:
 
 ```bash
 pnpm run dev
