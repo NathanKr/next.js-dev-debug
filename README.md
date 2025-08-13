@@ -140,19 +140,19 @@ This is the launch.json file
 
 <h2>Demo</h2>
 
-<h3>Debug middleware</h3>
+<h3>Debug sever code : middleware</h3>
 <ol>
 <li>
-Put a breakpoint on line 5 of your <code>middleware.ts</code> file.
+<strong>Put a breakpoint</strong>  on line 5 of your <code>middleware.ts</code> file.
 </li>
 <li>
-Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side" and hit F5. This will start your Next.js app in debug mode.
+<strong>Start the server</strong> : Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side" and hit F5. This will start your Next.js app in debug mode.
 </li>
 <li>
-In the VS Code debug console or terminal, click on the <code>http://localhost:3000/</code> link that appears. This will open the page in your browser and trigger the middleware.
+<strong>Navigate</strong> : In the VS Code debug console or terminal, click on the <code>http://localhost:3000/</code> link that appears. This will open the page in your browser and trigger the middleware.
 </li>
 <li>
-Once the breakpoint is hit, you can use the debug icons to step through the code, inspect variables, and continue execution.
+<strong>Use the debug icons</strong> : Once the breakpoint is hit, you can use the debug icons to step through the code, inspect variables, and continue execution.
 </li>
 </ol>
 <p>
@@ -163,7 +163,7 @@ The following is an image of breakpoint hit
 
 <img src='./figs/debug-middleware.png'>
 
-<h3>Debug server component</h3>
+<h3>Debug sever code : server component</h3>
 Follow the steps of Debug middleware just put the breakpoint in the Hpme page at line 4
 
 
@@ -171,13 +171,13 @@ The following is an image of breakpoint hit
 
 <img src='./figs/debug-server-component.png'>
 
-<h3>client component</h3>
+<h3>Debug client code : client component</h3>
 
 <ol>
 <li>
-Put a breakpoint on line 5 of app/page1/page.tsx.
+<strong>Put a breakpoint</strong> on line 5 of app/page1/page.tsx.
 </li>
-<li>Start the server: Open your terminal and run the development server manually
+<li><strong>Start the server</strong> Open your terminal and run the development server manually
 
 ```bash
 npm run dev
@@ -185,17 +185,18 @@ npm run dev
 
 </li>
 <li>
-Attach the debugger: Once the server is running, switch to the "Run and Debug" view in VS Code and select the "Next.js: debug client-side" configuration
+<strong>Attach the debugger</strong>: Once the server is running, switch to the "Run and Debug" view in VS Code and select the "Next.js: debug client-side" configuration
 </li>
 <li>
-Start the debugger: hit F5 or click the green arrow. The debugger will open a new browser window or tab and attach the debugging tools, allowing you to hit breakpoints in your client components.
+<strong>Start the debugger</strong>: hit F5 or click the green arrow. The debugger will open a new browser window or tab with http://localhost:3000 and attach the debugging tools, allowing you to hit breakpoints in your client components.
 </li>
-<li>in the browser navigate to http://localhost:3000/page1 </li>
+<li><strong>Navigate</strong> in the opened browser to http://localhost:3000/page1 </li>
 <li>
-Once the breakpoint is hit, you can use the debug icons to step through the code, inspect variables, and continue execution.
+<strong>Use the debug icons</strong> once the breakpoint is hit, to step through the code, inspect variables, and continue execution.
 </li>
 </ol>
 <p>
+
 For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
 
@@ -204,16 +205,39 @@ The following is an image of breakpoint hit
 <img src='./figs/debug-client-component.png'/>
 
 
+<h3>Debug client code and server side</h3>
+
+
+<p>
+    Using the <strong>"Next.js: debug full stack"</strong> configuration is the most efficient way to debug both your server and client components at the same time. This single configuration automates the process of starting the Next.js development server and attaching both the Node.js (server) and browser (client) debuggers.
+</p>
+
+<h4>Step-by-Step Guide</h4>
+<ol>
+    <li>
+        <strong>Set your breakpoints</strong>: Place breakpoints in your code wherever you need them, whether that's in a server component, client component, middleware, or server action.
+    </li>
+    <li>
+        <strong>Start the debugger</strong>: In VS Code's "Run and Debug" view, select the "Next.js: debug full stack" configuration from the dropdown menu and press the green play button. VS Code will automatically start the Next.js server and launch a new browser window.
+    </li>
+    <li>
+        <strong>Trigger the breakpoints</strong>: Navigate to the page you want to debug in the new browser window. The debugger will pause at your breakpoints, allowing you to inspect variables and step through your code on both the server and the client.
+    </li>
+</ol>
+
+<h4>How It Works</h4>
+<p>
+    The <code>serverReadyAction</code> property in this configuration is key. It tells VS Code to monitor the terminal output for the <code>Local:</code> URL and, once it finds it, to automatically launch a browser and attach a debugger. This is what provides the seamless, integrated debugging experience.
+</p>
+
+
+
+ 
+
 <h2>open issues</h2>
 <ul>
     <li>when to use 'Next.js: debug full stack' / "Next.js: debug client-side" / Next.js: debug server-side</li>
-    <li>how to create the json file and how to debug</li>
-    <li>can i simply use the json file in reference 1</li>
     <li>how monorepo fits here</li>
-  <li>debug client problem
-    
-  <img src='./figs/debug-client-side-problem.png'/>
-  </li>
 </ul>
 
 <h2>Points of Interest</h2>
