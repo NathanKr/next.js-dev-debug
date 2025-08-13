@@ -41,7 +41,7 @@ pnpm i
 
 once you choose the name e.g. "Next.js: debug server-side" a subsequent F5 will not as for name and will use the prevouse.
 
-If you want to choose new name you need to click "Run and Debug" or shortcut  "Ctrl + shift + D" 
+If you want to choose new name you need to click "Run and Debug" or shortcut  "Ctrl + shift + D"  and than click F5
 
 <h2>Technologies Used</h2>
 next.js
@@ -146,7 +146,7 @@ This is the launch.json file
 Put a breakpoint on line 5 of your <code>middleware.ts</code> file.
 </li>
 <li>
-Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side". This will start your Next.js app in debug mode.
+Click "Run and Debug" (or use the shortcut <code>Ctrl + Shift + D</code>) and select "Next.js: debug server-side" and hit F5. This will start your Next.js app in debug mode.
 </li>
 <li>
 In the VS Code debug console or terminal, click on the <code>http://localhost:3000/</code> link that appears. This will open the page in your browser and trigger the middleware.
@@ -159,9 +159,49 @@ Once the breakpoint is hit, you can use the debug icons to step through the code
 For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
 </p>
 
-The following is an image og breakpoint hit
+The following is an image of breakpoint hit
 
 <img src='./figs/debug-middleware.png'>
+
+<h3>Debug server component</h3>
+Follow the steps of Debug middleware just put the breakpoint in the Hpme page at line 4
+
+
+The following is an image of breakpoint hit
+
+<img src='./figs/debug-server-component.png'>
+
+<h3>client component</h3>
+
+<ol>
+<li>
+Put a breakpoint on line 5 of app/page1/page.tsx.
+</li>
+<li>Start the server: Open your terminal and run the development server manually
+
+```bash
+npm run dev
+```
+
+</li>
+<li>
+Attach the debugger: Once the server is running, switch to the "Run and Debug" view in VS Code and select the "Next.js: debug client-side" configuration
+</li>
+<li>
+Start the debugger: hit F5 or click the green arrow. The debugger will open a new browser window or tab and attach the debugging tools, allowing you to hit breakpoints in your client components.
+</li>
+<li>in the browser navigate to http://localhost:3000/page1 </li>
+<li>
+Once the breakpoint is hit, you can use the debug icons to step through the code, inspect variables, and continue execution.
+</li>
+</ol>
+<p>
+For all subsequent debugging sessions, you can simply press <code>F5</code> as VS Code remembers the last configuration you used.
+</p>
+
+The following is an image of breakpoint hit
+
+<img src='./figs/debug-client-component.png'/>
 
 
 <h2>open issues</h2>
@@ -170,7 +210,10 @@ The following is an image og breakpoint hit
     <li>how to create the json file and how to debug</li>
     <li>can i simply use the json file in reference 1</li>
     <li>how monorepo fits here</li>
-   
+  <li>debug client problem
+    
+  <img src='./figs/debug-client-side-problem.png'/>
+  </li>
 </ul>
 
 <h2>Points of Interest</h2>
