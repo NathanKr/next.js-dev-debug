@@ -22,12 +22,26 @@ middleware
 
 <h2>Installation</h2>
 
-<ol>
-<li>create .vscode/launch.json in the project root using <a href='https://nextjs.org/docs/app/guides/debugging'>this</a><li>
-</ol>
+create .vscode/launch.json in the project root using <a href='https://nextjs.org/docs/app/guides/debugging'>this</a>
+
+install project dependencies
+
+```bash
+pnpm i
+```
+
 
 <h2>Usage</h2>
-....
+
+<ol>
+<li>put a brakpoint in the source files : .ts , .tsx</li>
+<li>start Debug using F5 </li>
+<li>choose name </li>
+</ol>
+
+once you choose the name e.g. "Next.js: debug server-side" a subsequent F5 will not as for name and will use the prevouse.
+
+If you want to choose new name you need to click "Run and Debug" or shortcut  "Ctrl + shift + D" 
 
 <h2>Technologies Used</h2>
 next.js
@@ -71,21 +85,8 @@ vscode
 </li>
 </ul>
 
-<!-- <h2>Basic launch.json concepts (or debug concepts ??)</h2>
 
-name
-type
-request
-command
-url
-reAttach
-pathMappings
-runtimeArgs
-skipFiles
-serverReadyAction
-workspaceFolder -->
-
-<h2>Code Structure</h2>
+<h2>Code (configuration)</h2>
 
 This is the launch.json file
 
@@ -138,7 +139,34 @@ This is the launch.json file
 ```
 
 <h2>Demo</h2>
-....
+
+<h3>Debug middleware</h3>
+
+<ol>
+<li>
+    Put a breakpoint on line 5 of <code>middleware.ts</code>.
+</li>
+<li>
+    Click "Run and Debug" or use the shortcut <code>Ctrl + Shift + D</code> and choose "Next.js: debug server-side".
+</li>
+<li>
+    Once the breakpoint is hit, you can decide how to continue using the debug icons: step by step, and so on.
+</li>
+</ol>
+<p>
+The next time you need to debug, you can simply use <code>F5</code> because the last configuration you chose is saved.
+</p>
+
+<!-- put a break pointy in line 5 0f middleare.ts
+click "Run and Debug" or shortcut  "Ctrl + shift + D"  and choose "Next.js: debug server-side"
+Once breakpoint hit you can decide how to continue using the debug icons : step but step , and so on
+
+The next time you need to debug it use F5 because the last name is saved -->
+
+The following is an image og breakpoint hit
+
+<img src='./figs/debug-middleware.png'>
+
 
 <h2>open issues</h2>
 <ul>
