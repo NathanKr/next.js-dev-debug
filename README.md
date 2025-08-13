@@ -250,6 +250,11 @@ For all subsequent debugging sessions, you can simply press <code>F5</code> as V
 </p>
 
 
+The following image shows a breakpoint being hit
+<img src='./figs/debug-fullstack.png' alt='Breakpoint hit during full-stack debugging'/>
+
+
+
 <h4>How It Works</h4>
 <p>
     The <code>serverReadyAction</code> property in this configuration is key. It tells VS Code to monitor the terminal output for the <code>Local:</code> URL and, once it finds it, to automatically launch a browser and attach a debugger. This is what provides the seamless, integrated debugging experience.
