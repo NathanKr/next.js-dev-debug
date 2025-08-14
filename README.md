@@ -271,6 +271,70 @@ The following image shows a breakpoint being hit
     The <code>serverReadyAction</code> property in this configuration is key. It tells VS Code to monitor the terminal output for the <code>Local:</code> URL and, once it finds it, to automatically launch a browser and attach a debugger. This is what provides the seamless, integrated debugging experience.
 </p>
 
+<h4>Debugger Action for Full Stack Debugging</h4>
+
+<p>
+The <code>serverReadyAction</code> configuration allows VS Code to automatically launch a browser for client-side debugging once your Next.js server is ready. Here's how different options behaved in my experience, providing flexibility for your own setup:
+</p>
+
+<h5>Option 1: Using Microsoft Edge (Encountered Error)</h5>
+<p>
+The original configuration used <code>"action": "debugWithEdge"</code>. This instructs VS Code to launch the Microsoft Edge browser and attach a debugger session to it. However, on my machine, I consistently encountered an "Unable to launch browser" error:
+</p>
+<img src='./figs/vscode-launch-edge-problem.png' alt="Screenshot of VS Code 'Unable to launch browser' error for Edge">
+
+<h5>Workaround: Manual Browser Launch</h5>
+<p>
+When the "Unable to launch browser" error occurred with <code>debugWithEdge</code>, my workaround was to simply click the **Cancel** button in the error dialog. I then manually launched my preferred browser (Firefox in my case) and navigated to <code>http://localhost:3000/</code> to continue with the debugging session from there. This allows you to proceed even if automatic browser launch fails.
+</p>
+
+<h5>Option 2: Attempting with Firefox (Not Supported)</h5>
+<p>
+I also attempted to change the <code>action</code> to <code>"debugWithFirefox"</code>. Unfortunately, this option was not supported by my VS Code setup, preventing an automatic launch of Firefox.
+</p>
+
+<h5>Option 3: Using Google Chrome (Successful Automatic Launch)</h5>
+<p>
+Finally, changing the <code>action</code> to <code>"debugWithChrome"</code> successfully opened Google Chrome and attached the debugger without any launch errors. This provides a seamless automatic browser launch experience for full-stack debugging.
+</p>
+
+<p>
+Based on your setup, installed browsers, and personal preference (whether for automatic launch or manual control), you can choose the <code>action</code> that works best for you.
+</p>
+
+<p>Here's the relevant section of the <code>launch.json</code>, showing the successful Chrome configuration:</p>
+
+```json
+"serverReadyAction": {
+        "action": "debugWithChrome", // Change to debugWithEdge or debugWithFirefox as supported/preferred, or remove for manual launch
+```
+
+<p>
+So, when using the "Next.js: debug full stack (Monorepo)" configuration, the debugger will aim to automatically open the browser specified by your chosen <code>action</code>, or you can use a manual workaround if necessary.
+</p>
+
+
+<!-- <h4>debugWithEdge problem on my machine</h4>
+
+<p>
+The configuration we got from <a href='#ref1'>[1]</a> uses:
+</p>
+
+<pre><code>"serverReadyAction": {
+        "action": "debugWithEdge",
+</code></pre>
+
+<p>
+This instructs VS Code to launch the Microsoft Edge browser and attach a debugger session to it. Unfortunately, on my machine, I get an error:
+</p>
+
+<img src='./figs/vscode-launch-edge-problem.png' alt="Screenshot of VS Code 'Unable to launch browser' error for Edge">
+
+<p>
+So I simply click the cancel button and then manually launch my preferred browser (Firefox in my case), navigating to <code>http://localhost:3000/</code> to continue as usual.
+</p>
+
+Unfortuneatly debugWithFirefox is not supported but debugWithChrome did open chrome and i did not get the launch error -->
 
 <h3>When to Use Each Configuration</h3>
 <ul>
@@ -290,8 +354,7 @@ The following image shows a breakpoint being hit
 
 <h2>References</h2>
 <ul>
-    <li><a href='https://nextjs.org/docs/app/guides/debugging'>Official next.js docs : How to use debugging tools with Next.js</a></li>
+    <li id='ref1'><a href='https://nextjs.org/docs/app/guides/debugging'>Official next.js docs : How to use debugging tools with Next.js</a></li>
     <li><a href='https://youtu.be/6-EczMn-BeU?si=gOeUhjHLeb1Gr1Vv'>Node debugging is easy with VS Code</a></li>
     <li><a href='https://www.youtube.com/watch?v=_5mGxLZ61J0'> Debugging Next.js in VSCode and Chrome DevTools (comprehensive guide) </a></li>
-   
 </ul>
