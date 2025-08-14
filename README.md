@@ -159,6 +159,17 @@ This is the launch.json file
 The Demo provides a set of step-by-step guides for debugging different parts of a Next.js application, including both server-side and client-side code. The following demos show you how to use specific launch configurations to target breakpoints in your middleware, server components, client components, and server actions.
 </p>
 
+<h3>Side bar icon - run and debug</h3>
+
+<p>This icon is very handy because you can:</p>
+  <ul>
+      <li>Choose the configuration name.</li>
+      <li>Start debug.</li>
+      <li>View debug info: variables, watch expressions, and call stack.</li>
+  </ul>
+
+<img src='./figs/side-panel-run-and-debug-icon.png' alt="VS Code Run and Debug sidebar icon placeholder">
+
 <h3>Debug server code : middleware</h3>
 <ol>
 <li>
