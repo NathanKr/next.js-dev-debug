@@ -236,7 +236,7 @@ The following image shows a breakpoint being hit
 <img src='./figs/debug-client-component.png' alt='Breakpoint hit in client component'/>
 
 
-<h3>Debug client code and server side</h3>
+<h3>Debug client code and server side - fullstack</h3>
 
 
 <p>
@@ -271,7 +271,7 @@ The following image shows a breakpoint being hit
     The <code>serverReadyAction</code> property in this configuration is key. It tells VS Code to monitor the terminal output for the <code>Local:</code> URL and, once it finds it, to automatically launch a browser and attach a debugger. This is what provides the seamless, integrated debugging experience.
 </p>
 
-<h4>Debugger Action for Full Stack Debugging</h4>
+<h4>The <code>serverReadyAction</code> configuration for Full Stack Debugging</h4>
 
 <p>
 The <code>serverReadyAction</code> configuration allows VS Code to automatically launch a browser for client-side debugging once your Next.js server is ready. Here's how different options behaved in my experience, providing flexibility for your own setup:
@@ -285,7 +285,7 @@ The original configuration used <code>"action": "debugWithEdge"</code>. This ins
 
 <h5>Workaround: Manual Browser Launch</h5>
 <p>
-When the "Unable to launch browser" error occurred with <code>debugWithEdge</code>, my workaround was to simply click the **Cancel** button in the error dialog. I then manually launched my preferred browser (Firefox in my case) and navigated to <code>http://localhost:3000/</code> to continue with the debugging session from there. This allows you to proceed even if automatic browser launch fails.
+When the "Unable to launch browser" error occurred with <code>debugWithEdge</code>, my workaround was to simply click the <strong>Cancel</strong> button in the error dialog. I then manually launched my preferred browser (Firefox in my case) and navigated to <code>http://localhost:3000/</code> to continue with the debugging session from there. This allows you to proceed even if automatic browser launch fails.
 </p>
 
 <h5>Option 2: Attempting with Firefox (Not Supported)</h5>
@@ -310,31 +310,9 @@ Based on your setup, installed browsers, and personal preference (whether for au
 ```
 
 <p>
-So, when using the "Next.js: debug full stack (Monorepo)" configuration, the debugger will aim to automatically open the browser specified by your chosen <code>action</code>, or you can use a manual workaround if necessary.
+So, when using the "Next.js: debug full stack" configuration, the debugger will aim to automatically open the browser specified by your chosen <code>action</code>, or you can use a manual workaround if necessary.
 </p>
 
-
-<!-- <h4>debugWithEdge problem on my machine</h4>
-
-<p>
-The configuration we got from <a href='#ref1'>[1]</a> uses:
-</p>
-
-<pre><code>"serverReadyAction": {
-        "action": "debugWithEdge",
-</code></pre>
-
-<p>
-This instructs VS Code to launch the Microsoft Edge browser and attach a debugger session to it. Unfortunately, on my machine, I get an error:
-</p>
-
-<img src='./figs/vscode-launch-edge-problem.png' alt="Screenshot of VS Code 'Unable to launch browser' error for Edge">
-
-<p>
-So I simply click the cancel button and then manually launch my preferred browser (Firefox in my case), navigating to <code>http://localhost:3000/</code> to continue as usual.
-</p>
-
-Unfortuneatly debugWithFirefox is not supported but debugWithChrome did open chrome and i did not get the launch error -->
 
 <h3>When to Use Each Configuration</h3>
 <ul>
@@ -349,8 +327,8 @@ Unfortuneatly debugWithFirefox is not supported but debugWithChrome did open chr
 </li>
 </ul>
 
- 
-
+<h2>Key Takeaways</h2>
+<p>By default, use the "Next.js: debug full stack" configuration.</p>
 
 <h2>References</h2>
 <ul>
