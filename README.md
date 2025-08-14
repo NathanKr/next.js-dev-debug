@@ -314,21 +314,36 @@ So, when using the "Next.js: debug full stack" configuration, the debugger will 
 </p>
 
 
-<h3>When to Use Each Configuration</h3>
-<ul>
-<li>
-<strong><code>Next.js: debug server-side</code></strong>: Use this when you only need to debug code that runs on the server, like middleware, server components, and server actions. It's faster and more resource-efficient because it only starts the server debugger.
-</li>
-<li>
-<strong><code>Next.js: debug client-side</code></strong>: Use this when you need to debug code that runs in the browser, such as client components and UI logic. It assumes the server is already running and only attaches a browser debugger, which is useful for focusing on front-end issues.
-</li>
-<li>
-<strong><code>Next.js: debug full stack</code></strong>: Use this when you need to debug both server and client code at the same time. This is great for tracing a request from the server to the client or for debugging components that have server and client parts working together. It offers the most seamless, all-in-one experience.
-</li>
-</ul>
-
 <h2>Key Takeaways</h2>
-<p>By default, use the "Next.js: debug full stack" configuration.</p>
+
+When to Use Each Configuration ?
+<p>Here's a quick guide to help you choose the right debugging configuration for your needs:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Configuration Name</th>
+            <th>When to Use It</th>
+            <th>Key Benefit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Next.js: debug server-side</code></td>
+            <td>When you only need to debug code that runs on the server (middleware, server components, server actions).</td>
+            <td>Faster and more resource-efficient as it only starts the server debugger.</td>
+        </tr>
+        <tr>
+            <td><code>Next.js: debug client-side</code></td>
+            <td>When you need to debug code that runs in the browser (client components, UI logic).</td>
+            <td>Focuses on front-end issues, assuming the server is already running.</td>
+        </tr>
+        <tr>
+            <td><code>Next.js: debug full stack</code></td>
+            <td>When you need to debug both server and client code at the same time.</td>
+            <td>Great for tracing requests from server to client; offers a seamless, all-in-one experience.</td>
+        </tr>
+    </tbody>
+</table>
 
 <h2>References</h2>
 <ul>
